@@ -32,9 +32,21 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @guest
+                    @else
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/costumer') }}">{{ __('Costumer') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Paket Lebaran') }}</a>
+                        </li>
                     </ul>
+                    @endguest
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
