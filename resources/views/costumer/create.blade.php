@@ -39,7 +39,11 @@
         </div>
         <div class="form-group">
             <label for="no_paket">No-Paket</label>
-            <input type="text" class="form-control" name="no_paket">
+            <select name="no_paket" class="form-control">
+                @foreach ($pakets as $paket)
+                  <option value="{{ $paket->id }}">{{ $paket->nama_paket}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-success" value="Simpan">
