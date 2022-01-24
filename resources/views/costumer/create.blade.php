@@ -30,7 +30,7 @@
           <input type="text" class="form-control" name="alamat">
         </div>
         <div class="form-group">
-            <label for="no_telepon">No Telepn</label>
+            <label for="no_telepon">No Telepon</label>
             <input type="text" class="form-control" name="no_telepon">
         </div>
         <div class="form-group">

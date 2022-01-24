@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Costumer;
+use App\Paket;
 use Illuminate\Http\Request;
 
 class CostumerController extends Controller
@@ -25,7 +26,8 @@ class CostumerController extends Controller
      */
     public function create()
     {
-        return view('costumer.create');
+        $pakets = Paket::all();
+        return view('costumer.create', compact('pakets'));
     }
 
     /**
@@ -37,6 +39,7 @@ class CostumerController extends Controller
     public function store(Request $request)
     {
         Costumer::create($request->all());
+        
         return redirect('costumer');
     }
 
