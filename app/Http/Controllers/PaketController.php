@@ -18,6 +18,12 @@ class PaketController extends Controller
         return view('paket.index', compact('pakets'));
     }
 
+    public function report()
+    {
+        $pakets = Paket::all();
+        return view('paket.report', compact('pakets'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

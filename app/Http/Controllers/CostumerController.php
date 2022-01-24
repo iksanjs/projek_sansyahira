@@ -19,6 +19,12 @@ class CostumerController extends Controller
         return view('costumer.index', compact('costumers'));
     }
 
+    public function report()
+    {
+        $costumers = Costumer::all();
+        return view('costumer.report', compact('costumers'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

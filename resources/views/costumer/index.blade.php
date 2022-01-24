@@ -26,7 +26,7 @@
                         <td>{{ $costumer->alamat}}</td>
                         <td>{{ $costumer->no_telepon }}</td>
                         <td>{{ $costumer->no_agent }}</td>
-                        <td>{{ $costumer->no_paket }}</td>
+                        <td>{{ $costumer->paket->nama_paket }}</td>
                         <td>
                             <a href="{{route('costumer.edit', $costumer->id)}}" class="btn btn-primary">Edit</a>
                         </td>

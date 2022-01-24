@@ -24,3 +24,6 @@ Route::resource('/paket', 'PaketController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/reportcostumer', 'CostumerController@report');
+Route::get('/reportpaket', 'PaketController@report');
