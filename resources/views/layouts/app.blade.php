@@ -52,6 +52,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/paket') }}">{{ __('Paket Lebaran') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/pembayaran') }}">{{ __('Pembayaran') }}</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Report <span class="caret"></span>
