@@ -8,25 +8,25 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>No-Paket</th>
-                    <th>Nama Paket</th>
-                    <th>Harga Paket</th>
-                    <th>Keterangan</th>
+                    <th>No-Pembayaran</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Tanggal Pembayaran</th>
+                    <th>Bayar</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($pakets as $paket)
+                @foreach ($pembayarans as $pembayaran)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $paket->no_paket }}</td>
-                        <td>{{ $paket->nama_paket }}</td>
-                        <td>{{ $paket->harga_paket}}</td>
-                        <td>{{ $paket->keterangan }}</td>
+                        <td>{{ $pembayaran->no_pembayaran }}</td>
+                        <td>{{ $pembayaran->costumer->nama }}</td>
+                        <td>{{ $pembayaran->tgl_pembayaran}}</td>
+                        <td>{{ $pembayaran->bayar }}</td>
                         <td>
-                            <a href="{{route('paket.edit', $paket->id)}}" class="btn btn-primary">Edit</a>
+                            <a href="{{route('pembayaran.edit', $pembayaran->id)}}" class="btn btn-primary">Edit</a>
                         </td>
-                        <td><form action="{{ route('paket.destroy', $paket->id) }}" method="post">
+                        <td><form action="{{ route('pembayaran.destroy', $pembayaran->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>

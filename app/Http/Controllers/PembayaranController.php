@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Costumer;
+use App\Pembayaran;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
@@ -13,7 +15,8 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        //
+        $pembayarans = Pembayaran::all();
+        return view('pembayaran.index', compact('pembayarans'));
     }
 
     /**
@@ -23,7 +26,8 @@ class PembayaranController extends Controller
      */
     public function create()
     {
-        //
+        $costumers = Costumer::all();
+        return view('pembayaran.create', compact('costumers'));
     }
 
     /**
@@ -34,7 +38,8 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pembayaran::create($request->all());
+        return redirect('pembayaran');
     }
 
     /**
@@ -54,9 +59,9 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pembayaran $pembayaran)
     {
-        //
+        return view('pembayaran.edit', compact('pembayaran'));
     }
 
     /**
@@ -66,9 +71,10 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pembayaran $pembayaran)
     {
-        //
+        $pembayaran->update($request->all());
+        return redirect('pembayaran');
     }
 
     /**
@@ -77,8 +83,9 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pembayaran $pembayaran)
     {
-        //
+        $pembayaran->delete();
+        return redirect('pembayaran');
     }
 }

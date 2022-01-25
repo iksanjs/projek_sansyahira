@@ -21,6 +21,8 @@ Route::resource('/costumer', 'CostumerController');
 
 Route::resource('/paket', 'PaketController');
 
+Route::resource('/pembayaran', 'PembayaranController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
