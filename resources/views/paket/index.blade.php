@@ -12,6 +12,7 @@
                     <th>Nama Paket</th>
                     <th>Harga Paket</th>
                     <th>Keterangan</th>
+                    <th>Jumlah Pelanggan</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
@@ -23,6 +24,7 @@
                         <td>{{ $paket->nama_paket }}</td>
                         <td>{{ $paket->harga_paket}}</td>
                         <td>{{ $paket->keterangan }}</td>
+                        <td>{{ count($paket->costumers) }}</td>
                         <td>
                             <a href="{{route('paket.edit', $paket->id)}}" class="btn btn-primary">Edit</a>
                         </td>
